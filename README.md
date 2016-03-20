@@ -1,6 +1,6 @@
 # remdb
 
-A simple in-memory database that accepts input from **stdin** and outputs to **stdout**.
+A simple in-memory database that accepts input from **stdin** and outputs to **stdout**. It sounds cool but it's just a glorified JS object wrapped with an API.
 
 # How do I do things?
 
@@ -17,7 +17,7 @@ Unsets the key **name**, **name** will become undefined.
 Print out key names that are currently set to **value**.
 
 ### END
-Exit remdb.
+Exits remdb.
 
 
 # Transaction Commands

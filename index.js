@@ -1,1 +1,2 @@
-module.exports = require('./lib/remdb.js');
+var remdb = require('./lib/remdb');
+require('./lib/cli')(remdb);
