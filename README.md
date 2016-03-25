@@ -1,6 +1,6 @@
 # remdb
 
-A simple in-memory database that accepts input from **stdin** and outputs to **stdout**. It sounds cool but it's just a glorified JS object wrapped with an API.
+A simple in-memory database that can be used as a **module** or interacted as a **stdin - stdout** CLI application.
 
 # How do I use the CLI?
 
