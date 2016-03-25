@@ -2,7 +2,7 @@
   "name": "remdb",
   "version": "0.1.0",
   "description": "A simple in-memory database.",
-  "main": "index.js",
+  "main": "./lib/remdb.js",
   "directories": {
     "test": "test"
   },

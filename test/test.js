@@ -75,9 +75,9 @@ describe('Transactions', function() {
         remdb.BEGIN();
         remdb.SET('a', 20);
         expect(remdb.GET('a')).to.equal(20);
-        expect(remdb.ROLLBACK()).to.equal('');
+        expect(remdb.ROLLBACK()).to.equal(0);
         expect(remdb.GET('a')).to.equal(10);
-        expect(remdb.ROLLBACK()).to.equal('');
+        expect(remdb.ROLLBACK()).to.equal(0);
         expect(remdb.GET('a')).to.equal('NULL');
 
         remdb.CLEAR();
@@ -103,7 +103,7 @@ describe('Transactions', function() {
         remdb.BEGIN();
         remdb.UNSET('a');
         expect(remdb.GET('a')).to.equal('NULL');
-        remdb.ROLLBACK();
+        expect(remdb.ROLLBACK()).to.equal(0);
         expect(remdb.GET('a')).to.equal(60);
         remdb.COMMIT();
         expect(remdb.GET('a')).to.equal(60);
@@ -118,7 +118,7 @@ describe('Transactions', function() {
         remdb.BEGIN();
         remdb.UNSET('a');
         expect(remdb.NUMEQUALTO(10)).to.equal(0);
-        remdb.ROLLBACK();
+        expect(remdb.ROLLBACK()).to.equal(0);
         expect(remdb.NUMEQUALTO(10)).to.equal(1);
         remdb.COMMIT();
 
