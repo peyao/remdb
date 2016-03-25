@@ -51,10 +51,9 @@ describe('Basics', function() {
             remdb.SET('MyIQ', 99);
             remdb.SET('CheckingBalance', 99);
             remdb.SET('NumProblems', 99);
-            remdb.SET('StarbucksBalance', '99');
+            remdb.SET('StarbucksBalance', 99);
 
-            expect(remdb.NUMEQUALTO(99)).to.equal(3);
-            expect(remdb.NUMEQUALTO('99')).to.equal(1);
+            expect(remdb.NUMEQUALTO(99)).to.equal(4);
 
             remdb.CLEAR();
         });
