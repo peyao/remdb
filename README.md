@@ -1,4 +1,5 @@
-# remdb
+# remdb 
+[![Code Climate](https://codeclimate.com/github/peyao/remdb/badges/gpa.svg)](https://codeclimate.com/github/peyao/remdb)
 
 A simple in-memory database that can be used as a **module** or interacted as a **stdin - stdout** CLI application.
 
