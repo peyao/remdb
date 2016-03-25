@@ -1,29 +1,69 @@
 # remdb
 
-A simple in-memory database that accepts input from **stdin** and outputs to **stdout**.
+A simple in-memory database that accepts input from **stdin** and outputs to **stdout**. It sounds cool but it's just a glorified JS object wrapped with an API.
 
-# How do I do things?
+# How do I use the CLI?
 
-### SET name value
-Sets the key **name** to value **value**.
+    npm install
+    node bin/remdb
+    node bin/remdb < test/test_cli_1.txt
 
-### GET name
-Prints out the value of **name** to *stdout*. If **name** has not yet been set, will output *NULL*.
+# How do I use it as a module?
 
-### UNSET name
-Unsets the key **name**, **name** will become undefined.
+    npm install
+
+Then in your file:
+
+    var Remdb = require('../lib/remdb');
+    var remdb = new Remdb();
+
+    remdb.SET('a', 10);
+    var aVal = remdb.GET('a');
+
+# Interface
+
+### SET key value
+Sets the **key** to **value**.
+
+    remdb.SET('a', 10);
+
+### GET key
+Get the **value** of **key**. If **key** has not yet been set, will return *NULL*.
+
+    remdb.GET('a');
+
+### UNSET key
+Unsets the **key**'s **value**, it will become null.
+
+    remdb.UNSET('a');
 
 ### NUMEQUALTO value
-Print out key names that are currently set to **value**.
+Get number of **key**s that are currently set to **value**.
+
+    remdb.NUMEQUALTO(10);
+
+### CLEAR
+*[Module]* Clears the database. Only available when included as a module.
+
+    remdb.CLEAR();
 
 ### END
-Exit remdb.
+*[CLI]* Exits remdb. Only available in CLI.
 
 
 # Transaction Commands
 
 ### BEGIN
+Open a new transaction block. Transaction blocks can be nested.
+
+    remdb.BEGIN();
 
 ### ROLLBACK
+Collapse latest transaction block (undo what was set after the latest BEGIN).
+
+    remdb.ROLLBACK();
 
 ### COMMIT
+Apply and collapse all transaction blocks.
+
+    remdb.COMMIT();

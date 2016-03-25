@@ -1,0 +1,37 @@
+{
+  "name": "remdb",
+  "version": "1.0.0",
+  "description": "A simple in-memory database.",
+  "main": "./lib/remdb",
+  "directories": {
+    "test": "test"
+  },
+  "bin": {
+    "remdb": "./bin/remdb"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peyao/remdb.git"
+  },
+  "keywords": [
+    "remdb",
+    "db",
+    "database",
+    "bst",
+    "in-memory"
+  ],
+  "author": "peyao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/peyao/remdb/issues"
+  },
+  "homepage": "https://github.com/peyao/remdb#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  }
+}
