@@ -2,9 +2,12 @@
   "name": "remdb",
   "version": "0.1.0",
   "description": "A simple in-memory database.",
-  "main": "./lib/remdb.js",
+  "main": "./lib/remdb",
   "directories": {
     "test": "test"
+  },
+  "bin": {
+    "remdb": "./bin/remdb"
   },
   "scripts": {
     "test": "./node_modules/.bin/mocha --reporter spec"

@@ -74,6 +74,20 @@ describe('Transactions', function() {
         });
     });
 
+    describe('ROLLBACK', function() {
+        it('should return status of operation', function() {
+            expect(remdb.ROLLBACK()).to.equal('NO TRANSACTION');
+            remdb.CLEAR();
+        });
+    });
+
+    describe('COMMIT', function() {
+        it('should return status of operation', function() {
+            expect(remdb.COMMIT()).to.equal('NO TRANSACTION');
+            remdb.CLEAR();
+        });
+    });
+
     describe('Test 1', function() {
         it('should handle ROLLBACKs', function() {
             remdb.BEGIN();
