@@ -1,2 +1,3 @@
-var remdb = require('./lib/remdb');
+var Remdb = require('./lib/remdb');
+var remdb = new Remdb();
 require('./lib/cli')(remdb);

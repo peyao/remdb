@@ -1,5 +1,8 @@
 var expect = require('chai').expect;
-var remdb = require('../lib/remdb');
+var Remdb = require('../lib/remdb');
+var BST = require('../lib/bst');
+var remdb = new Remdb();
+var bst = new BST();
 
 describe('Basics', function() {
     describe('SET', function() {
@@ -136,6 +139,39 @@ describe('Transactions', function() {
             remdb.COMMIT();
 
             remdb.CLEAR();
+        });
+    });
+});
+
+describe('BST', function() {
+    describe('ins', function() {
+        it('should insert a node', function() {
+            bst.insert('b', 20);
+            bst.insert('a', 10);
+            bst.insert('c', 30);
+            bst.insert('a', 11);
+        });
+    });
+
+    describe('search', function() {
+        it('should search for a node by key and return its value', function() {
+            expect(bst.search('a')).to.equal(11);
+            expect(bst.search('b')).to.equal(20);
+            expect(bst.search('c')).to.equal(30);
+        });
+    });
+
+    describe('del', function() {
+        it('should delete a node by key', function() {
+            expect(bst.search('c')).to.equal(30);
+            bst.delete('c');
+            expect(bst.search('c')).to.be.null;
+            expect(bst.search('a')).to.equal(11);
+            bst.delete('a');
+            expect(bst.search('a')).to.be.null;
+            expect(bst.search('b')).to.equal(20);
+            bst.delete('b');
+            expect(bst.search('b')).to.be.null;
         });
     });
 });
