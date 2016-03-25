@@ -67,3 +67,10 @@ Collapse latest transaction block (undo what was set after the latest BEGIN).
 Apply and collapse all transaction blocks.
 
     remdb.COMMIT();
+
+
+# Running Tests
+Tests are located in **test/test.js** and uses *Mocha* with *Chai*.
+
+    npm install
+    npm test
